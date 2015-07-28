@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Colors">
+      <UniqueIdentifier>{f3aac892-65b0-42fa-a1bc-992b083f845a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Colors">
+      <UniqueIdentifier>{0eca757a-4b3f-4632-8fa2-ba808e31eaa7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Image">
+      <UniqueIdentifier>{e1905e71-e622-479b-aa44-d3a1a2d1f64e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Image">
+      <UniqueIdentifier>{00f40de5-ef1f-4d6c-a2e2-395ec9e09935}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Writers">
+      <UniqueIdentifier>{198a9b33-8c34-4e5c-9d23-bb756ed21821}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Writers">
+      <UniqueIdentifier>{b381f71c-33bf-4b75-948e-ab5623769b92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Geometry">
+      <UniqueIdentifier>{abb85f4e-3e7d-4ea0-a50f-4ee6069ff3af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Geometry">
+      <UniqueIdentifier>{e8483a13-56d9-4890-b738-844adf17df06}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="RGBColor.cpp">
+      <Filter>Source Files\Colors</Filter>
+    </ClCompile>
+    <ClCompile Include="RGBImage.cpp">
+      <Filter>Source Files\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PPMWritercpp.cpp">
+      <Filter>Source Files\Writers</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="RGBColor.h">
+      <Filter>Header Files\Colors</Filter>
+    </ClInclude>
+    <ClInclude Include="RGBImage.h">
+      <Filter>Header Files\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="IWriter.h">
+      <Filter>Header Files\Writers</Filter>
+    </ClInclude>
+    <ClInclude Include="PPMWriter.h">
+      <Filter>Header Files\Writers</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>Header Files\Geometry</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
