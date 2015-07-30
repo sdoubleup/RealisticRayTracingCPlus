@@ -24,8 +24,10 @@ int main(int argc, char *argv[])
 	RRT::Vector3<int> i(2, 3, 4);
 	RRT::Vector3<float> f(2.0f, 4.5f, 6.6f);
 	RRT::Vector3<int> itwo(i);
+	RRT::Vector3<double> dtwo(d);
 
-	assert(i.Equals(itwo, 0.0));
+	assert(i.Equals(itwo));
+	assert(d.Equals(dtwo));
 
 	return 0;
 }

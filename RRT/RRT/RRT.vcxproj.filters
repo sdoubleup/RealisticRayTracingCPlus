@@ -68,5 +68,8 @@
     <ClInclude Include="Vector3.h">
       <Filter>Header Files\Geometry</Filter>
     </ClInclude>
+    <ClInclude Include="GoogleTestFloatingPoint.h">
+      <Filter>Header Files\Geometry</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

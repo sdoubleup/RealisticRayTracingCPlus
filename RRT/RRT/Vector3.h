@@ -5,6 +5,9 @@
 #include <vector>
 #include <assert.h>
 
+#include "GoogleTestFloatingPoint.h"
+
+
 namespace RRT {
 
 	template<class T>
@@ -104,19 +107,19 @@ namespace RRT {
 		}
 
 		// A generalised equality function. This is needed because
-		// we can't directly compare floating point values. We have
-		// to use an epsilon.
-		// Note that the int version is specialised below as the 
-		// tolerance is not needed there.
-		bool Equals(const Vector3<T>& v2, double tolerance) {
-			// Absoloute tolerance, TODO change to a relative or 
-			// use the Lexographical nature of floating point?
-			// Is relative more appropriate here?
-			// Does lexographical work with 64bit?
-			if (std::fabs(x() - v2.x()) > tolerance) return false;
-			if (std::fabs(y() - v2.y()) > tolerance) return false;
-			if (std::fabs(z() - v2.z()) > tolerance) return false;
-			return true;
+		// we can't directly compare floating point values.
+		// Note that the int version is specialised below as it doesn't need to 
+		// do this.
+		bool Equals(const Vector3<T>& v2) {
+			// We use the templated floating point class from the google test
+			// code to do floating point comparisons of equality.
+			FloatingPoint<T> fpx(x());
+			FloatingPoint<T> fpy(y());
+			FloatingPoint<T> fpz(z());
+			FloatingPoint<T> ofpx(v2.x());
+			FloatingPoint<T> ofpy(v2.y());
+			FloatingPoint<T> ofpz(v2.z());
+			return (fpx.AlmostEquals(ofpx) && fpy.AlmostEquals(ofpy) && fpz.AlmostEquals(ofpz));
 		}
 
 	private:
@@ -127,7 +130,7 @@ namespace RRT {
 
 	// Specialize on int so that we can handle it more sensibly.
 	template <>
-	bool Vector3<int>::Equals(const Vector3<int>& v2, double tolerance) {
+	bool Vector3<int>::Equals(const Vector3<int>& v2) {
 		return ((x() == v2.x()) && (y() == v2.y()) && (z() == v2.z()));
 	}
 
