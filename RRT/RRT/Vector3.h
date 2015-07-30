@@ -30,18 +30,23 @@ namespace RRT {
 			m_components = v2.m_components; 
 			return *this;
 		}
-		Vector3<T>& operator*=(double scalar) { 
+
+		template <typename Scalar>
+		Vector3<T>& operator*=(const Scalar& scalar) { 
 			m_components[0] *= scalar;
 			m_components[1] *= scalar;
 			m_components[2] *= scalar;
 			return *this;
 		}
-		Vector3<T>& operator/=(double scalar) {
+
+		template <typename Scalar>
+		Vector3<T>& operator/=(const Scalar& scalar) {
 			m_components[0] /= scalar;
 			m_components[1] /= scalar;
 			m_components[2] /= scalar;
 			return *this;
 		}
+
 		Vector3<T>& operator+=(const Vector3<T>& v2) {
 			m_components[0] += v2.m_components[0];
 			m_components[1] += v2.m_components[1];
@@ -98,19 +103,33 @@ namespace RRT {
 			); 
 		}
 
+		// A generalised equality function. This is needed because
+		// we can't directly compare floating point values. We have
+		// to use an epsilon.
+		// Note that the int version is specialised below as the 
+		// tolerance is not needed there.
 		bool Equals(const Vector3<T>& v2, double tolerance) {
+			// Absoloute tolerance, TODO change to a relative or 
+			// use the Lexographical nature of floating point?
+			// Is relative more appropriate here?
+			// Does lexographical work with 64bit?
 			if (std::fabs(x() - v2.x()) > tolerance) return false;
 			if (std::fabs(y() - v2.y()) > tolerance) return false;
 			if (std::fabs(z() - v2.z()) > tolerance) return false;
 			return true;
 		}
-		
 
 	private:
 
 		std::vector<T> m_components;
 
 	};
+
+	// Specialize on int so that we can handle it more sensibly.
+	template <>
+	bool Vector3<int>::Equals(const Vector3<int>& v2, double tolerance) {
+		return ((x() == v2.x()) && (y() == v2.y()) && (z() == v2.z()));
+	}
 
 	template<class T>
 	Vector3<T> operator+(const Vector3<T>& v1, const Vector3<T>& v2) {
@@ -130,8 +149,8 @@ namespace RRT {
 		return t;
 	}
 
-	template<class T>
-	Vector3<T> operator*(double scalar, const Vector3<T>& v1) {
+	template<class T, typename Scalar>
+	Vector3<T> operator*(const Scalar& scalar, const Vector3<T>& v1) {
 		Vector3<T> t(v1.x() * scalar, v1.y() * scalar, v1.z() * scalar);
 		return t;
 	}
