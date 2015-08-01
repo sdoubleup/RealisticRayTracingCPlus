@@ -9,8 +9,8 @@
 
 
 namespace RRT {
-
-	template<class T>
+				
+	template<typename T>
 	class Vector3 {
 
 	public:
@@ -34,16 +34,13 @@ namespace RRT {
 			return *this;
 		}
 
-		template <typename Scalar>
-		Vector3<T>& operator*=(const Scalar& scalar) { 
+		Vector3<T>& operator*=(double scalar) {
 			m_components[0] *= scalar;
 			m_components[1] *= scalar;
 			m_components[2] *= scalar;
 			return *this;
 		}
-
-		template <typename Scalar>
-		Vector3<T>& operator/=(const Scalar& scalar) {
+		Vector3<T>& operator/=(double scalar) {
 			m_components[0] /= scalar;
 			m_components[1] /= scalar;
 			m_components[2] /= scalar;
@@ -71,9 +68,17 @@ namespace RRT {
 			);
 		}
 
+		bool IsUnit() const {
+			// We need some fuzziness here.
+			FloatingPoint<double> l(Length());
+			FloatingPoint<double> u(1.0);
+			return (l.AlmostEquals(u));
+		}
+
 		Vector3<T> Unit() const { 
 			Vector3<T> v(*this);
 			v /= v.Length();
+			assert(v.IsUnit());
 			return v;
 		}
 
@@ -108,8 +113,6 @@ namespace RRT {
 
 		// A generalised equality function. This is needed because
 		// we can't directly compare floating point values.
-		// Note that the int version is specialised below as it doesn't need to 
-		// do this.
 		bool Equals(const Vector3<T>& v2) {
 			// We use the templated floating point class from the google test
 			// code to do floating point comparisons of equality.
@@ -127,33 +130,27 @@ namespace RRT {
 		std::vector<T> m_components;
 
 	};
-
-	// Specialize on int so that we can handle it more sensibly.
-	template <>
-	bool Vector3<int>::Equals(const Vector3<int>& v2) {
-		return ((x() == v2.x()) && (y() == v2.y()) && (z() == v2.z()));
-	}
-
-	template<class T>
+		
+	template<typename T>
 	Vector3<T> operator+(const Vector3<T>& v1, const Vector3<T>& v2) {
 		Vector3<T> t(v1.x() + v2.x(), v1.y() + v2.y(), v1.z() + v2.z());
 		return t;
 	}
 
-	template<class T>
+	template<typename T>
 	Vector3<T> operator-(const Vector3<T>& v1, const Vector3<T>& v2) {
 		Vector3<T> t(v1.x() - v2.x(), v1.y() - v2.y(), v1.z() - v2.z());
 		return t;
 	}
 
-	template<class T>
+	template<typename T>
 	Vector3<T> operator*(const Vector3<T>& v1, double scalar) {
 		Vector3<T> t(v1.x() * scalar, v1.y() * scalar, v1.z() * scalar);
 		return t;
 	}
 
-	template<class T, typename Scalar>
-	Vector3<T> operator*(const Scalar& scalar, const Vector3<T>& v1) {
+	template<typename T>
+	Vector3<T> operator*(double scalar, const Vector3<T>& v1) {
 		Vector3<T> t(v1.x() * scalar, v1.y() * scalar, v1.z() * scalar);
 		return t;
 	}

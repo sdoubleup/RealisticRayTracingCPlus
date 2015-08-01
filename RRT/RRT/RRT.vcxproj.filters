@@ -37,6 +37,12 @@
     <Filter Include="Header Files\Geometry">
       <UniqueIdentifier>{e8483a13-56d9-4890-b738-844adf17df06}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Geometry\Shapes">
+      <UniqueIdentifier>{a0c366e7-0b11-4bca-8575-72e1f41c3c28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Geometry\Shapes">
+      <UniqueIdentifier>{757beb0a-772c-48ec-bde9-da7ec653f282}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RGBColor.cpp">
@@ -70,6 +76,18 @@
     </ClInclude>
     <ClInclude Include="GoogleTestFloatingPoint.h">
       <Filter>Header Files\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="OrthonormalBasis.h">
+      <Filter>Header Files\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Ray.h">
+      <Filter>Header Files\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="IShape.h">
+      <Filter>Header Files\Geometry\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Triangle.h">
+      <Filter>Header Files\Geometry\Shapes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -5,3 +5,7 @@ RRT/RRT/data.ppm
 RRT/Debug/
 RRT/ipch/
 RRT/RRT.sdf
+RRT/RRT/Release/
+RRT/Release/RRT.exe
+RRT/Release/
+RRT/UnitTests/Release/
