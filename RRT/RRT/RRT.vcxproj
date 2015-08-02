@@ -81,14 +81,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MemoryArenaAllocator.cpp" />
     <ClCompile Include="PPMWritercpp.cpp" />
     <ClCompile Include="RGBColor.cpp" />
     <ClCompile Include="RGBImage.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AllocAligned.h" />
     <ClInclude Include="GoogleTestFloatingPoint.h" />
     <ClInclude Include="IShape.h" />
     <ClInclude Include="IWriter.h" />
+    <ClInclude Include="MemoryArenaAllocator.h" />
     <ClInclude Include="OrthonormalBasis.h" />
     <ClInclude Include="PPMWriter.h" />
     <ClInclude Include="Ray.h" />

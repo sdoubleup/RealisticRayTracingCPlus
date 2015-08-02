@@ -43,6 +43,12 @@
     <Filter Include="Source Files\Geometry\Shapes">
       <UniqueIdentifier>{757beb0a-772c-48ec-bde9-da7ec653f282}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Memory">
+      <UniqueIdentifier>{dcd2d271-9392-4df1-86d4-491ab8da0f57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Memory">
+      <UniqueIdentifier>{24d5bbe4-9e3e-4b8e-ae6c-7405645fb3db}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RGBColor.cpp">
@@ -56,6 +62,9 @@
     </ClCompile>
     <ClCompile Include="PPMWritercpp.cpp">
       <Filter>Source Files\Writers</Filter>
+    </ClCompile>
+    <ClCompile Include="MemoryArenaAllocator.cpp">
+      <Filter>Source Files\Memory</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -88,6 +97,12 @@
     </ClInclude>
     <ClInclude Include="Triangle.h">
       <Filter>Header Files\Geometry\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryArenaAllocator.h">
+      <Filter>Header Files\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="AllocAligned.h">
+      <Filter>Header Files\Memory</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
