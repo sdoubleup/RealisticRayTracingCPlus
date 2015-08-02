@@ -89,6 +89,7 @@
   <ItemGroup>
     <ClInclude Include="AllocAligned.h" />
     <ClInclude Include="GoogleTestFloatingPoint.h" />
+    <ClInclude Include="Intersections.h" />
     <ClInclude Include="ISampler.h" />
     <ClInclude Include="IShape.h" />
     <ClInclude Include="IWriter.h" />

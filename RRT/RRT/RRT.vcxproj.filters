@@ -119,5 +119,8 @@
     <ClInclude Include="MultiJitterSampler.h">
       <Filter>Header Files\Sampling</Filter>
     </ClInclude>
+    <ClInclude Include="Intersections.h">
+      <Filter>Header Files\Geometry</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

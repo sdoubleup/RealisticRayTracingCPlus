@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 	shapes.push_back(tri);
 
 	std::unique_ptr<ISampler<double>> sampler(new MultiJitterSampler<double>());
-	size_t number_samples = 5;
+	size_t number_samples = 9;
 
 	Concurrency::parallel_for (0, 500, [&image, direction, tmin, tmax, &shapes, &sampler, number_samples](int i) {
 		// Fill a row at a time.
