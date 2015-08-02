@@ -19,7 +19,7 @@ namespace RRT {
 		double power = 1.0 / img.m_gamma;
 
 		// Output clamped [0, 255] values.
-		for (auto row = img.m_raster.begin(); row != img.m_raster.end(); row++) {
+		for (auto row = img.m_raster.rbegin(); row != img.m_raster.rend(); row++) {
 			for (auto& col : *row) {
 				unsigned int red = std::min(static_cast<int>(MAXVAL * (std::pow(col.R(), power))), MAXVAL - 1);
 				unsigned int gre = std::min(static_cast<int>(MAXVAL * (std::pow(col.G(), power))), MAXVAL - 1);
