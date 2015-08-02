@@ -49,6 +49,12 @@
     <Filter Include="Source Files\Memory">
       <UniqueIdentifier>{24d5bbe4-9e3e-4b8e-ae6c-7405645fb3db}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Sampling">
+      <UniqueIdentifier>{001ce02e-7bb3-4bae-a3ac-d4cd2003d73d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Sampling">
+      <UniqueIdentifier>{81d5df6a-11ac-40b4-a57e-d6b10bad7513}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="RGBColor.cpp">
@@ -103,6 +109,15 @@
     </ClInclude>
     <ClInclude Include="AllocAligned.h">
       <Filter>Header Files\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="SimplePoint.h">
+      <Filter>Header Files\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="ISampler.h">
+      <Filter>Header Files\Sampling</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiJitterSampler.h">
+      <Filter>Header Files\Sampling</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
 
-#include <Vector3.h>
+#include "Vector3.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 

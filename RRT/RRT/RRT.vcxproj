@@ -89,14 +89,17 @@
   <ItemGroup>
     <ClInclude Include="AllocAligned.h" />
     <ClInclude Include="GoogleTestFloatingPoint.h" />
+    <ClInclude Include="ISampler.h" />
     <ClInclude Include="IShape.h" />
     <ClInclude Include="IWriter.h" />
     <ClInclude Include="MemoryArenaAllocator.h" />
+    <ClInclude Include="MultiJitterSampler.h" />
     <ClInclude Include="OrthonormalBasis.h" />
     <ClInclude Include="PPMWriter.h" />
     <ClInclude Include="Ray.h" />
     <ClInclude Include="RGBColor.h" />
     <ClInclude Include="RGBImage.h" />
+    <ClInclude Include="SimplePoint.h" />
     <ClInclude Include="Triangle.h" />
     <ClInclude Include="Vector3.h" />
   </ItemGroup>
